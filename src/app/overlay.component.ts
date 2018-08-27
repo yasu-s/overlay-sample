@@ -5,6 +5,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   template: `
     <ng-container *ngIf="visible">
       <div class="overlay-panel" (click)="close()">
+        <div class="overlay-spinner">
+          <mat-spinner></mat-spinner>
+        </div>
       </div>
     </ng-container>
   `,
@@ -18,6 +21,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       bottom: 0px;
       background-color: gray;
       opacity: 0.5;
+    }
+    .overlay-spinner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
     }
   `]
 })
