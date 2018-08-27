@@ -6,11 +6,16 @@ import { DialogComponent } from './dialog.component';
 @Component({
   selector: 'app-root',
   template: `
+    <overlay [(visible)]="overlayVisible"></overlay>
     <h2>Overlay Sample</h2>
     <button (click)="openDialog()">Dialog</button>
+    <button (click)="onClick()">overlay</button>
   `
 })
 export class AppComponent {
+
+  /** */
+  overlayVisible = false;
 
   constructor(private dialog: MatDialog) {}
 
@@ -20,5 +25,9 @@ export class AppComponent {
       height: '400px',
       hasBackdrop: true
     });
+  }
+
+  onClick(): void {
+    this.overlayVisible = true;
   }
 }

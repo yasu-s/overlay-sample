@@ -14,7 +14,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styles: [`
     .overlay-panel {
       position: absolute;
-      z-index: 1;
+      z-index: 1000;
       top: 0px;
       left: 0px;
       right: 0px;
