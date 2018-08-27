@@ -7,15 +7,19 @@ import { DialogComponent } from './dialog.component';
   selector: 'app-root',
   template: `
     <overlay [(visible)]="overlayVisible"></overlay>
+    <overlay-cdk [(visible)]="overlayCdkVisible"></overlay-cdk>
     <h2>Overlay Sample</h2>
     <button (click)="openDialog()">Dialog</button>
     <button (click)="onClick()">overlay</button>
+    <button (click)="onClick2()">overlay(CDK)</button>
   `
 })
 export class AppComponent {
 
   /** */
   overlayVisible = false;
+
+  overlayCdkVisible = false;
 
   constructor(private dialog: MatDialog) {}
 
@@ -29,5 +33,9 @@ export class AppComponent {
 
   onClick(): void {
     this.overlayVisible = true;
+  }
+
+  onClick2(): void {
+    this.overlayCdkVisible = true;
   }
 }
